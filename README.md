@@ -43,7 +43,7 @@
 | 29. |[What is middleware?](#q-what-is-middleware)|
 | 30. |[What is typically the first argument passed to a Node.js callback handler?](#q-what-is-typically-the-first-argument-passed-to-a-nodejs-callback-handler)|
 | 31. |[How Node.js read the content of a file?](#q-how-nodejs-read-the-content-of-a-file)|
-| 32. ||
+| 32. | [How to import a module in Node.js?](#q-how-to-import-a-module-in-nodejs)|
 | 33. |[What is difference between put and patch?](#q-what-is-difference-between-put-and-patch)|
 | 34. |[List types of Http requests supported by Node.js.](#q-list-types-of-http-requests-supported-by-nodejs)
 | 35. |[Why to use Express.js?](#q-why-to-use-expressjs)|
@@ -1596,6 +1596,10 @@ The most commonly used HTTP verbs POST, GET, PUT, DELETE are similar to CRUD (Cr
     <b><a href="#">↥ back to top</a></b>
 </div>
 
+## Q. ***How to import a module in Node.js?***
+
+We use the require module to import the External libraries in Node.js. The result returned by require() is stored in a variable which is used to invoke the functions using the dot notation.
+      
 ## Q. ***List types of Http requests supported by Node.js?***
 
 The HTTP core module is a key module to Node.js networking.
