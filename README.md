@@ -47,7 +47,7 @@
 | 33. |[What is difference between put and patch?](#q-what-is-difference-between-put-and-patch)|
 | 34. |[List types of Http requests supported by Node.js.](#q-list-types-of-http-requests-supported-by-nodejs)
 | 35. |[Why to use Express.js?](#q-why-to-use-expressjs)|
-| 36. | [What are the main disadvantages of Node.js?](#what-are-the-main-disadvantages-of-nodejs)|
+| 36. | [What are the main disadvantages of Node.js?](#q-what-are-the-main-disadvantages-of-nodejs)|
 | 37. ||
 | 38. ||
 | 39. ||
