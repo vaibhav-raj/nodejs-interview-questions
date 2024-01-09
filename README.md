@@ -40,20 +40,20 @@
 | 26. |[Name the types of API functions in Node.js.](#q-name-the-types-of-api-functions-in-nodejs)
 | 27. |[How does Node.js handle child threads?](#q-how-does-nodejs-handle-child-threads)|
 | 28. |[What is the preferred method of resolving unhandled exceptions in Node.js?](#q-what-is-the-preferred-method-of-resolving-unhandled-exceptions-in-nodejs)|
-| 29. |[How does Node.js support multi-processor platforms, and does it fully utilize all processor resources?](#q-how-does-nodejs-support-multi-processor-platforms-and-does-it-fully-utilize-all-processor-resources)|
+| 29. ||
 | 30. |[What is typically the first argument passed to a Node.js callback handler?](#q-what-is-typically-the-first-argument-passed-to-a-nodejs-callback-handler)|
 | 31. |[How Node.js read the content of a file?](#q-how-nodejs-read-the-content-of-a-file)|
-| 32. |[What is JIT and how is it related to Node.js?](#q-what-is-jit-and-how-is-it-related-to-nodejs)|
+| 32. ||
 | 33. |[What is difference between put and patch?](#q-what-is-difference-between-put-and-patch)|
 | 34. |[List types of Http requests supported by Node.js.](#q-list-types-of-http-requests-supported-by-nodejs)
 | 35. |[Why to use Express.js?](#q-why-to-use-expressjs)|
-| 36. |[Write the steps for setting up an Express JS application.](#q-write-the-steps-for-setting-up-an-express-js-application)
-| 37. |[Since node is a single threaded process, how to make use of all CPUs?](#q-since-node-is-a-single-threaded-process-how-to-make-use-of-all-cpus)|
-| 38. |[What does emitter do and what is dispatcher?](#q-what-does-emitter-do-and-what-is-dispatcher)|
-| 39. |[How to kill child processes that spawn their own child processes in Node.js?](#q-how-to-kill-child-processes-that-spawn-their-own-child-processes-in-nodejs)|
-| 40. |[What do you understand by Reactor Pattern in Node.js?](#q-what-do-you-understand-by-reactor-pattern-in-nodejs)|
+| 36. ||
+| 37. ||
+| 38. ||
+| 39. ||
+| 40. ||
 | 41. |[What are the key features of Node.js?](#q-what-are-the-key-features-of-nodejs)|
-| 42. |[What are globals in Node.js?](#q-what-are-globals-in-nodejs)|
+| 42. ||
 | 43. |[What is chaining process in Node.js?](#q-what-is-chaining-process-in-nodejs)|
 | 44. |[What is a control flow function? what are the steps does it execute?](#q-what-is-a-control-flow-function-what-are-the-steps-does-it-execute)|
 | 45. |[What is npm in Node.js?](#q-what-is-npm-in-nodejs)|
@@ -93,6 +93,14 @@
 | 79. |[What is Callback function in node.js?](#q-what-is-callback-function-in-nodejs)|
 | 80. |[What is asynchronous programming in node.js?](#q-what-is-asynchronous-programming-in-nodejs)|
 | 81. |[How to implement asymmetric cryptography when signing and verify JSON Web Token (JWT) for authentication in node js?](#q-how-to-implement-asymmetric-cryptography-when-signing-and-verifying-json-web-token-jwt-for-authentication-in-node-js) |
+| 82. |[How does Node.js support multi-processor platforms, and does it fully utilize all processor resources?](#q-how-does-nodejs-support-multi-processor-platforms-and-does-it-fully-utilize-all-processor-resources)| 
+| 83. |[What is JIT and how is it related to Node.js?](#q-what-is-jit-and-how-is-it-related-to-nodejs)|
+| 84. |[Write the steps for setting up an Express JS application.](#q-write-the-steps-for-setting-up-an-express-js-application)|
+| 85. |[Since node is a single threaded process, how to make use of all CPUs?](#q-since-node-is-a-single-threaded-process-how-to-make-use-of-all-cpus)|
+| 86. |[What does emitter do and what is dispatcher?](#q-what-does-emitter-do-and-what-is-dispatcher)|
+| 87. |[How to kill child processes that spawn their own child processes in Node.js?](#q-how-to-kill-child-processes-that-spawn-their-own-child-processes-in-nodejs)|
+| 88. |[What do you understand by Reactor Pattern in Node.js?](#q-what-do-you-understand-by-reactor-pattern-in-nodejs)|
+| 89. |[What are globals in Node.js?](#q-what-are-globals-in-nodejs)|
 
 <br/>
 
