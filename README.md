@@ -393,8 +393,6 @@ Node JS Platform does not follow Request/Response Multi-Threaded Stateless Model
 
 ## Q. ***What is the difference between Node.js, AJAX, and JQuery?***
 
-***IN SHORT*** :  Node.js is a JavaScript runtime environment that runs on the server side whereas AJAX is a client-side programming language that runs on the browser.
-
 Node.js is a javascript runtime that makes it possible for us to write back-end of applications.
 
 Asynchronous JavaScript and XML(AJAX) refers to group of technologies that we use to send requests to web servers and retrieve data from them without reloading the page.
@@ -2367,6 +2365,8 @@ Improper maintenance of an application can result in issues related to stability
 7. Dig into the roots
 
 ## Q. ***What is the difference between Node.js vs Ajax?***
+
+***IN SHORT*** :  Node.js is a JavaScript runtime environment that runs on the server side whereas AJAX is a client-side programming language that runs on the browser.
 
 **1. AJAX**
 
