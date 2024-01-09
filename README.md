@@ -474,7 +474,8 @@ In the preceding example, if any exception is thrown during the reading of the f
 </div>
 
 ## Q. ***What is callback hell in Node.js?***
-
+***IN SHORT*** : Callback hell is an issue caused due to a nested callback. This causes the code to look like a pyramid and makes it unable to read To overcome this situation we use promises.
+ 
 `Callback hell` is a phenomenon that afflicts a JavaScript developer when he tries to execute multiple asynchronous operations one after the other.
 
 An asynchronous function is one where some external activity must complete before a result can be processed; it is “asynchronous” in the sense that there is an unpredictable amount of time before a result becomes available. Such functions require a callback function to handle errors and process the result.
