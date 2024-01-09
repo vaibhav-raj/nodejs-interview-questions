@@ -47,7 +47,7 @@
 | 33. |[What is difference between put and patch?](#q-what-is-difference-between-put-and-patch)|
 | 34. |[List types of Http requests supported by Node.js.](#q-list-types-of-http-requests-supported-by-nodejs)
 | 35. |[Why to use Express.js?](#q-why-to-use-expressjs)|
-| 36. ||
+| 36. | [What are the main disadvantages of Node.js?](#what-are-the-main-disadvantages-of-nodejs)|
 | 37. ||
 | 38. ||
 | 39. ||
@@ -1779,6 +1779,12 @@ app.get('/',function(req,res) {
 var server=app.listen(3000,function() {});
 ```
 
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***What are the main disadvantages of Node.js?***
+Since Node.js is single-threaded so multi-threaded engines are better and can handle tasks more efficiently. Also, we do not use relational databases with Node.js like MySQL mostly non-relational databases like MongoDB is used.
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
