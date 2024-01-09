@@ -40,7 +40,7 @@
 | 26. |[Name the types of API functions in Node.js.](#q-name-the-types-of-api-functions-in-nodejs)
 | 27. |[How does Node.js handle child threads?](#q-how-does-nodejs-handle-child-threads)|
 | 28. |[What is the preferred method of resolving unhandled exceptions in Node.js?](#q-what-is-the-preferred-method-of-resolving-unhandled-exceptions-in-nodejs)|
-| 29. |[What is middleware?](#what-is-middleware)|
+| 29. |[What is middleware?](#q-what-is-middleware)|
 | 30. |[What is typically the first argument passed to a Node.js callback handler?](#q-what-is-typically-the-first-argument-passed-to-a-nodejs-callback-handler)|
 | 31. |[How Node.js read the content of a file?](#q-how-nodejs-read-the-content-of-a-file)|
 | 32. ||
