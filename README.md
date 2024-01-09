@@ -1214,8 +1214,9 @@ console.log(decrypted);
     <b><a href="#">↥ back to top</a></b>
 </div>
 
- ### What is middleware?
-   - Middleware is the function that works between the request and the response cycle. Middleware gets executed after the server receives the request and before the controller sends the response.
+## Q. ***What is middleware?***
+
+Middleware is the function that works between the request and the response cycle. Middleware gets executed after the server receives the request and before the controller sends the response.
      
 ## Q. ***What is the use of DNS module in Node.js?***
 
