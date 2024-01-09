@@ -2517,6 +2517,16 @@ The difference between `process.nextTick()` and `setImmediate()` is that `proces
 |Utility	|Mainly using for any client-side activity for a web application, like possible attribute validation or refreshing the page in a specific interval or provide some dynamic changes in web pages without refreshing the page.|	It mainly used for accessing or performing any non-blocking operation of any operating system, like creating or executing a shell script or accessing any hardware specific information or running any backend job.|
 |Running Engine| JavaScript running any engine like Spider monkey (FireFox), JavaScript Core (Safari), V8 (Google Chrome).|	Node JS only run in a V8 engine which mainly used by google chrome. And javascript program which will be written under this Node JS will be always run in V8 Engine.|
 
+### JavaScript
+
+JavaScript is a lightweight programming language, often referred to as a "scripting language." It is commonly used to develop interactive web pages, allowing developers to insert dynamic text into HTML elements. JavaScript is primarily known as the language of web browsers.
+
+### Node.js
+
+Node.js is not a programming language but rather an engine that provides a runtime environment to execute JavaScript code. Unlike JavaScript in the browser, Node.js is used to run JavaScript programs outside the browser, primarily on the server-side. It is not designed to handle HTML tags; instead, it is used for server-side code execution.
+
+In summary, while JavaScript is a scripting language used for client-side web development, Node.js extends the use of JavaScript to the server-side, providing a runtime environment for running JavaScript code beyond the confines of the browser.
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
