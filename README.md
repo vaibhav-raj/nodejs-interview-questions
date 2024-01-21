@@ -15,7 +15,7 @@
 | 01. |[What does the runtime environment mean in Node.js?](#q-what-does-the-runtime-environment-mean-in-nodejs)|
 | 02. |[What is Node.js and why is it used?](#q-what-is-nodejs-and-why-is-it-used)|
 | 03. |[What is Node.js Process Model?](#q-what-is-nodejs-process-model)|
-| 04. |[What are the data types in Node.js?](#q-what-are-the-data-types-in-nodejs)|
+| 04. |[What is Event loop in Node.js? How does it work?](#q-what-is-event-loop-in-nodejs-how-does-it-work)|
 | 05. |[How to create a simple server in Node.js that returns Hello World?](#q-how-to-create-a-simple-server-in-nodejs-that-returns-hello-world)|
 | 06. |[How do Node.js works?](#q-how-do-nodejs-works)|
 | 07. |[What is an error-first callback?](#q-what-is-an-error-first-callback)|
@@ -27,7 +27,7 @@
 | 13. |[What is a test pyramid? How can you implement it when talking about HTTP APIs?](#q-what-is-a-test-pyramid-how-can-you-implement-it-when-talking-about-http-apis)|
 | 14. |[How can you secure your HTTP cookies against XSS attacks?](#q-how-can-you-secure-your-http-cookies-against-xss-attacks)|
 | 15. |[How can you make sure your dependencies are safe?](#q-how-can-you-make-sure-your-dependencies-are-safe)|
-| 16. |[What is Event loop in Node.js? How does it work?](#q-what-is-event-loop-in-nodejs-how-does-it-work)|
+| 16. ||
 | 17. |[What is REPL? What purpose it is used for?](#q-what-is-repl-what-purpose-it-is-used-for)|
 | 18. |[What is the difference between Asynchronous and Non-blocking?](#q-what-is-the-difference-between-asynchronous-and-non-blocking)|
 | 19. |[How to debug an application in Node.js?](#q-how-to-debug-an-application-in-nodejs)|
@@ -48,7 +48,7 @@
 | 34. |[List types of Http requests supported by Node.js.](#q-list-types-of-http-requests-supported-by-nodejs)
 | 35. |[Why to use Express.js?](#q-why-to-use-expressjs)|
 | 36. | [What are the main disadvantages of Node.js?](#q-what-are-the-main-disadvantages-of-nodejs)|
-| 37. ||
+| 37. |[What are the data types in Node.js?](#q-what-are-the-data-types-in-nodejs)|
 | 38. ||
 | 39. ||
 | 40. ||
@@ -175,12 +175,68 @@ The Node.js process model is based on a single-threaded, event-driven architectu
 - **Libuv Library**: Node.js relies on the Libuv library to manage asynchronous tasks, handle events, and provide cross-platform support for I/O operations. Libuv is responsible for managing the event loop and coordinating non-blocking tasks.
   
   ```
-  **Libuv** is a cross-platform open-source library, written in C,that serves as a crucial component in Node.js, managing asynchronous non blocking operations, using thread pool 
+  Libuv is a cross-platform open-source library, written in C,that serves as a crucial component in Node.js, managing asynchronous non blocking operations, using thread pool 
   and event loop.
-  **Thread pool** in Node.js allows for parallel execution of CPU-intensive tasks, preventing blocking of the main event loop.
+  Thread pool in Node.js allows for parallel execution of CPU-intensive tasks, preventing blocking of the main event loop.
   ```
   
 - **Worker Threads (Optional)**: Node.js introduced Worker Threads to allow the execution of JavaScript code in separate threads for CPU-intensive tasks. However, the main event loop remains single-threaded, and worker threads communicate with the main thread through inter-thread communication mechanisms.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***What is Event loop in Node.js? How does it work?***
+
+The event loop in Node.js is a central component of its architecture, managing the execution of asynchronous operations and events. It ensures non-blocking I/O by handling tasks such as I/O operations, timers, and callbacks in an efficient and sequential manner.
+
+## How it Works:
+
+- **Event Queue**: Asynchronous tasks and events are placed in the event queue, awaiting execution.
+- **Event Loop Initialization**: The event loop starts by checking the event queue for pending tasks.
+- **Execution of Tasks**: The event loop picks up tasks from the queue and executes their associated callbacks, which may involve I/O operations, timers, or other asynchronous events.
+- **Non-Blocking I/O**: While waiting for asynchronous operations to complete, the event loop doesn't block the main thread. Instead, it moves on to the next task, promoting non-blocking I/O.
+- **Callback Execution**: Upon completion of an asynchronous operation, the corresponding callback is placed in the callback queue.
+- **Callback Execution in Order**: The event loop sequentially executes callbacks in the callback queue, ensuring order and consistency in the program's flow.
+- **Continuous Loop**: The event loop continues this cycle, repeatedly checking the event queue for new tasks, executing them, and handling the associated callbacks.
+- **Efficiency and Responsiveness**: The event loop's design enhances the efficiency of Node.js by allowing it to handle numerous concurrent connections and tasks while maintaining responsiveness.
+- **Timers and Intervals**: Timers and intervals are managed within the event loop, ensuring timely execution of scheduled tasks.
+- **Microtask Queue (NextTick and Promises)**: Microtasks, such as those scheduled with process.nextTick and promises, are executed after each phase of the event loop, ensuring a predictable order of execution.
+
+```javascript
+// Example function simulating an asynchronous task with a callback
+function asynchronousTask(callback) {
+  // Simulating asynchronous operation (e.g., reading from a file)
+  setTimeout(() => {
+    console.log("Asynchronous task completed");
+    callback();
+  }, 1000);
+}
+
+// Example of using the asynchronous task with callbacks
+console.log("Start of the program");
+
+// Asynchronous task 1
+asynchronousTask(() => {
+  console.log("Callback from Asynchronous Task 1");
+});
+
+// Asynchronous task 2
+asynchronousTask(() => {
+  console.log("Callback from Asynchronous Task 2");
+});
+
+console.log("End of the program");
+
+```
+```
+Start of the program
+End of the program
+Asynchronous task completed
+Callback from Asynchronous Task 1
+Asynchronous task completed
+Callback from Asynchronous Task 2
+```
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -803,63 +859,6 @@ The only option is to automate the update / security audit of your dependencies.
 5. Snyk
 6. npm audit
 7. npm audit fix
-
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
-
-## Q. ***What is Event loop in Node.js? How does it work?***
-
-***In Short*** Event Loop in Node.js is used to handle callbacks. It is helpful in performing non-blocking I/O operations. An event loop is an endless loop, which waits for tasks, executes them, and then sleeps until it receives more tasks.
-
-The event loop is what allows Node.js to perform non-blocking I/O operations — despite the fact that JavaScript is single-threaded — by offloading operations to the system kernel whenever possible.
-
-Node.js is a single-threaded application, but it can support concurrency via the concept of `event` and `callbacks`. Every API of Node.js is asynchronous and being single-threaded, they use `async function calls` to maintain concurrency. Node uses observer pattern. Node thread keeps an event loop and whenever a task gets completed, it fires the corresponding event which signals the event-listener function to execute.
-
-**Event-Driven Programming**
-
-In an event-driven application, there is generally a main loop that listens for events, and then triggers a callback function when one of those events is detected.
-
-Although events look quite similar to callbacks, the difference lies in the fact that callback functions are called when an asynchronous function returns its result, whereas event handling works on the observer pattern. The functions that listen to events act as Observers. Whenever an event gets fired, its listener function starts executing. Node.js has multiple in-built events available through events module and EventEmitter class which are used to bind events and event-listeners as follows
-
-```javascript
-// Import events module
-var events = require('events');
-
-// Create an eventEmitter object
-var eventEmitter = new events.EventEmitter();
-```
-
-*Example*:
-
-```javascript
-// Import events module
-var events = require('events');
-
-// Create an eventEmitter object
-var eventEmitter = new events.EventEmitter();
-
-// Create an event handler as follows
-var connectHandler = function connected() {
-   console.log('connection succesful.');
-  
-   // Fire the data_received event 
-   eventEmitter.emit('data_received');
-}
-
-// Bind the connection event with the handler
-eventEmitter.on('connection', connectHandler);
- 
-// Bind the data_received event with the anonymous function
-eventEmitter.on('data_received', function() {
-   console.log('data received succesfully.');
-});
-
-// Fire the connection event 
-eventEmitter.emit('connection');
-
-console.log("Program Ended.");
-```
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
