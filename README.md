@@ -174,6 +174,8 @@ The Node.js process model is based on a single-threaded, event-driven architectu
 - **Callbacks and Callback Queue**: Callback functions are used to handle the results of asynchronous operations. After an asynchronous task completes, its callback is placed in the callback queue. The event loop picks up these callbacks and executes them one by one.
 - **Libuv Library**: Node.js relies on the Libuv library to manage asynchronous tasks, handle events, and provide cross-platform support for I/O operations. Libuv is responsible for managing the event loop and coordinating non-blocking tasks.
   
+  	-**Libuv Overview** :Libuv is a cross-platform open-source library, written in C,that serves as a crucial component in Node.js, managing asynchronous non blocking 		operations, using thread pool and event loop.
+  
 - **Worker Threads (Optional)**: Node.js introduced Worker Threads to allow the execution of JavaScript code in separate threads for CPU-intensive tasks. However, the main event loop remains single-threaded, and worker threads communicate with the main thread through inter-thread communication mechanisms.
 
 <div align="right">
