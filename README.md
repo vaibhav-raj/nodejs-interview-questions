@@ -164,7 +164,17 @@ From a web server development perspective Node has a number of benefits:
 
 ## Q. ***What is Node.js Process Model?***
 
-Node.js runs in a single process and the application code runs in a single thread and thereby needs less resources than other platforms. All the user requests to your web application will be handled by a single thread and all the I/O work or long running job is performed asynchronously for a particular request. So, this single thread doesn't have to wait for the request to complete and is free to handle the next request. When asynchronous I/O work completes then it processes the request further and sends the response.
+The Node.js process model is based on a single-threaded, event-driven architecture that utilizes non-blocking I/O operations. The key components of the Node.js process model include:
+
+- **Single-Threaded Event Loop**: Node.js operates on a single-threaded event loop. This single thread handles all asynchronous I/O operations, events, and callbacks.
+- **Event-Driven Architecture**: Node.js relies on an event-driven programming model. Asynchronous events trigger the execution of callback functions, allowing the program to respond to events without blocking the main thread.
+- **Non-Blocking I/O**: Node.js is designed to perform non-blocking I/O operations. When a function is called to perform I/O (e.g., reading from a file or making a network request), the program doesn't wait for the operation to complete. Instead, it continues executing other tasks, and a callback is triggered upon completion.
+- **Event Queue**: Events and their associated callbacks are managed in an event queue. The event loop continually checks this queue for pending events, executing their corresponding callbacks in a sequential manner.
+- **Concurrency with Event Loop**: While Node.js runs on a single thread, the event loop enables the appearance of concurrency. Asynchronous tasks, such as I/O operations, can be initiated, and the event loop allows other tasks to proceed while waiting for these asynchronous tasks to complete.
+- **Callbacks and Callback Queue**: Callback functions are used to handle the results of asynchronous operations. After an asynchronous task completes, its callback is placed in the callback queue. The event loop picks up these callbacks and executes them one by one.
+- **Libuv Library**: Node.js relies on the Libuv library to manage asynchronous tasks, handle events, and provide cross-platform support for I/O operations. Libuv is responsible for managing the event loop and coordinating non-blocking tasks.
+  
+- **Worker Threads (Optional)**: Node.js introduced Worker Threads to allow the execution of JavaScript code in separate threads for CPU-intensive tasks. However, the main event loop remains single-threaded, and worker threads communicate with the main thread through inter-thread communication mechanisms.
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
