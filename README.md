@@ -13,7 +13,7 @@
 | Sl.No|  Questions       |
 |------|------------------|
 | 01. |[What does the runtime environment mean in Node.js?](#q-what-does-the-runtime-environment-mean-in-nodejs)|
-| 02. |[What is Node.js?](#q-what-is-nodejs)|
+| 02. |[What is Node.js and why is it used?](#q-what-is-nodejs-and-why-is-it-used)|
 | 03. |[What is Node.js Process Model?](#q-what-is-nodejs-process-model)|
 | 04. |[What are the data types in Node.js?](#q-what-are-the-data-types-in-nodejs)|
 | 05. |[How to create a simple server in Node.js that returns Hello World?](#q-how-to-create-a-simple-server-in-nodejs-that-returns-hello-world)|
@@ -104,10 +104,36 @@
 
 <br/>
 
-
-## Q. ***What is Node.js?***
+## Q. ***What is Node.js and why is it used?***
 
 Node.js is an open-source server side runtime environment built on Chrome\'s V8 JavaScript engine. It provides an event driven, non-blocking (asynchronous) I/O and cross-platform runtime environment for building highly scalable server-side applications using JavaScript.
+
+### Key Features
+
+- **Asynchronous & Non-Blocking**: Ideal for handling a myriad of concurrent connections with efficiency.
+- **V8 Engine**: Powered by Google's V8, Node.js boasts top-tier JavaScript execution.
+- **Libuv Library**: Ensures consistent performance across platforms and assists in managing I/O operations.
+- **NPM**: A vast package ecosystem simplifies module management and deployment.
+- **Full-Stack JavaScript**: Allows for unified server and client-side code in JavaScript.
+
+### Use Cases
+
+- **Data Streaming**: Suited for real-time streaming of audio, video, and lightweight data.
+- **API Servers**: Ideal for building fast, scalable, and data-intensive applications.
+- **Microservices**: Its module-oriented design facilitates the development of decoupled, independently scalable services.
+- **Single Page Applications**: Often used with frameworks like Angular, React, or Vue to craft robust, server-side backends.
+- **Chat Applications**: Its real-time capabilities are advantageous in building instant messaging systems.
+- **Internet of Things (IoT)**: Provides a lightweight environment for running applications on constrained devices like Raspberry Pi.
+
+### Why Node.js?
+
+- **Unified Language**: Utilizing JavaScript both on the frontend and backend brings coherence to development efforts, potentially reducing debugging time and enabling shared libraries.
+- **NPM Ecosystem**: The NPM repository offers myriad open-source packages, empowering rapid development and feature expansion.
+- **Rapid Prototyping**: Express, a minimalist web framework for Node.js, and NPM's wealth of modules expedite early application development and testing.
+- **Scalability**: Cluster modules, load balancers, and Microservice Architecture aid in linear, on-demand scaling for both simple and intricate applications.
+- **Real-Time Power**: With built-in WebSockets and event-based architecture, Node.js excels in constructing real-time applications such as multiplayer games, stock trading platforms, and chat applications.
+- **Open Source**: Being an open-source technology, Node.js continuously benefits from community contributions, updates, and enhanced packages.
+
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
