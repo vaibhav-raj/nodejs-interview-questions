@@ -3939,46 +3939,48 @@ The SOLID principles are a set of design principles that help you create maintai
 ##
 
 **1-Single Responsibility Principle (SRP):** TA class should have only one reason to change, meaning it should have only one responsibility. This principle encourages breaking down a system into smaller, more focused components, each handling a specific aspect of functionality.
+**Example:** Consider a class `Report` responsible for generating and formatting reports. According to SRP, this class might violate the principle if it is also responsible for saving the report to a file or sending emails. Instead, those responsibilities should be delegated to separate classes.
 
 ```js
 // Bad Example
-class User {
-  constructor(name, email) {
-    this.name = name;
-    this.email = email;
+class Report {
+  generateReport(): void {
+    // Code to generate the report
   }
 
-  saveToDatabase() {
-    // Code to save user to the database
+  saveToFile(): void {
+    // Code to save the report to a file
   }
 
-  sendEmail() {
-    // Code to send an email to the user
+  sendEmail(): void {
+    // Code to send the report via email
   }
 }
 
 // Good Example
-class User {
-  constructor(name, email) {
-    this.name = name;
-    this.email = email;
+class Report {
+  generateReport(): void {
+    // Code to generate the report
   }
 }
 
-class UserRepository {
-  saveToDatabase(user) {
-    // Code to save user to the database
+class ReportSaver {
+  saveToFile(report: Report): void {
+    // Code to save the report to a file
   }
 }
 
-class EmailService {
-  sendEmail(user) {
-    // Code to send an email to the user
+class EmailSender {
+  sendEmail(report: Report): void {
+    // Code to send the report via email
   }
 }
+
 ```
 
 **2-Open/Closed Principle (OCP):** Software entities (classes, modules, functions, etc.) should be open for extension but closed for modification. This principle encourages extending existing functionality through new code rather than altering existing code, promoting stability and minimizing the risk of introducing bugs.
+
+**Example:** Consider a class Shape with a method area(). According to OCP, you should be able to add new shapes without modifying the existing Shape class. This can be achieved by creating new classes that extend Shape and implement the area() method.
 
 ```js
 // Bad Example
@@ -4016,6 +4018,8 @@ class Rectangle extends Shape {
 ```
 **3-Liskov Substitution Principle (LSP):** This principle states that objects of a superclass should be able to replace objects of a subclass without affecting the correctness of the program.
 
+**Example:** Consider a base class Bird with a method fly(). According to LSP, a subtype like Penguin (which cannot fly) should be substitutable for Bird without causing issues. The Penguin class should either override the fly() method with a suitable implementation or inherit it without violating the expectations of the base class.
+
 ```js
 // Bad Example
 class Bird {
@@ -4048,40 +4052,40 @@ class Penguin extends Bird {
 
 **4-Interface Segregation Principle (ISP):** TA class should not be forced to implement interfaces it does not use. This principle encourages the creation of specific, client-focused interfaces rather than large, general-purpose interfaces, preventing classes from being burdened with unnecessary methods.
 
+**Example:** Consider an interface Worker that combines methods for both working and eating. If a class doesn't need both methods, it should not be forced to implement them.
+
 ```js
 // Bad Example
-class Worker {
-  work() {
-    // Code to perform work
-  }
-
-  eat() {
-    // Code to eat
-  }
+interface Worker {
+  work(): void;
+  eat(): void;
 }
 
 // Good Example
-class Workable {
-  work() {
-    // To be implemented by classes that can work
+interface Workable {
+  work(): void;
+}
+
+interface Eatable {
+  eat(): void;
+}
+
+class Robot implements Workable {
+  work(): void {
+    // Code for the robot to perform work
   }
 }
 
-class Eatable {
-  eat() {
-    // To be implemented by classes that can eat
+class Human implements Workable, Eatable {
+  work(): void {
+    // Code for the human to perform work
+  }
+
+  eat(): void {
+    // Code for the human to eat
   }
 }
 
-class Worker implements Workable, Eatable {
-  work() {
-    // Code to perform work
-  }
-
-  eat() {
-    // Code to eat
-  }
-}
 ```
 **5-Dependency Inversion Principle (DIP):** High-level modules should not depend on low-level modules; both should depend on abstractions. Abstractions should not depend on details; details should depend on abstractions.
 
