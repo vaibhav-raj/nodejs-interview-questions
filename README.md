@@ -3933,10 +3933,10 @@ The SOLID principles are a set of design principles that help you create maintai
 - **Adaptability to Change:** SOLID principles make codebases more adaptable to changing requirements, minimizing the risk of introducing bugs.
 - **Better Code Quality:** Following SOLID principles often results in higher code quality, adhering to established best practices.
 - **Reduced Ripple Effect:** Changes made to one part of the codebase have minimal impact on other parts, reducing the "ripple effect."
-- 
+  
 ##
 
--**Single Responsibility Principle (SRP):** This principle states that a class should have only one reason to change, meaning it should have only one responsibility.
+**1-Single Responsibility Principle (SRP):** This principle states that a class should have only one reason to change, meaning it should have only one responsibility.
 
 ```js
 // Bad Example
@@ -3976,7 +3976,7 @@ class EmailService {
 }
 ```
 
--**Open/Closed Principle (OCP):** This principle states that a class should be open for extension but closed for modification.
+**2-Open/Closed Principle (OCP):** This principle states that a class should be open for extension but closed for modification.
 ```js
 // Bad Example
 class Rectangle {
@@ -4011,7 +4011,7 @@ class Rectangle extends Shape {
   }
 }
 ```
--**Liskov Substitution Principle (LSP):** This principle states that objects of a superclass should be able to replace objects of a subclass without affecting the correctness of the program.
+**3-Liskov Substitution Principle (LSP):** This principle states that objects of a superclass should be able to replace objects of a subclass without affecting the correctness of the program.
 
 ```js
 // Bad Example
@@ -4043,7 +4043,7 @@ class Penguin extends Bird {
 }
 ```
 
--**Interface Segregation Principle (ISP):** This principle states that a class should not be forced to implement interfaces it does not use.
+**4-Interface Segregation Principle (ISP):** This principle states that a class should not be forced to implement interfaces it does not use.
 
 ```js
 // Bad Example
@@ -4080,7 +4080,7 @@ class Worker implements Workable, Eatable {
   }
 }
 ```
--**Dependency Inversion Principle (DIP):** This principle states that high-level modules should not depend on low-level modules. Both should depend on abstractions.
+**5-Dependency Inversion Principle (DIP):** This principle states that high-level modules should not depend on low-level modules. Both should depend on abstractions.
 
 ```js
 // Bad Example
