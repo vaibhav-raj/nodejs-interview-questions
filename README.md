@@ -102,6 +102,10 @@
 | 88. |[What do you understand by Reactor Pattern in Node.js?](#q-what-do-you-understand-by-reactor-pattern-in-nodejs)|
 | 89. |[What are globals in Node.js?](#q-what-are-globals-in-nodejs)|
 
+| Sl.No|  System Design Questions       |
+|------|--------------------------------|
+| 01.  |[SOLID Principles?](#q-solid-principles)|
+
 <br/>
 
 ## Q. ***What does the runtime environment mean in Node.js?***
@@ -3914,3 +3918,220 @@ app.listen(3000);
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
+
+## Q. ***SOLID Principles***
+
+The SOLID principles are a set of design principles that help you create maintainable and scalable software. Let's go through each SOLID principle with examples in a Node.js context
+
+- **Maintainability:** SOLID principles enhance code maintainability by promoting modular and organized structures.
+- **Flexibility:** Adhering to SOLID principles results in code that is open for extension but closed for modification, promoting flexibility.
+- **Scalability:** The modular and loosely coupled design of SOLID principles facilitates easier scaling of applications.
+- **Readability** and Understandability: SOLID code is more readable and understandable due to its clear separation of responsibilities.
+- **Reduced Code Duplication:** SOLID principles lead to the creation of reusable components, reducing code duplication.
+- **Easy Testing:** SOLID principles, particularly DIP, make it easier to write unit tests by enabling dependency injection and the use of mock objects.
+- **Improved Collaboration:** A well-organized codebase following SOLID principles promotes efficient collaboration among developers.
+- **Adaptability to Change:** SOLID principles make codebases more adaptable to changing requirements, minimizing the risk of introducing bugs.
+- **Better Code Quality:** Following SOLID principles often results in higher code quality, adhering to established best practices.
+- **Reduced Ripple Effect:** Changes made to one part of the codebase have minimal impact on other parts, reducing the "ripple effect."
+- 
+##
+
+-**Single Responsibility Principle (SRP):** This principle states that a class should have only one reason to change, meaning it should have only one responsibility.
+
+```js
+// Bad Example
+class User {
+  constructor(name, email) {
+    this.name = name;
+    this.email = email;
+  }
+
+  saveToDatabase() {
+    // Code to save user to the database
+  }
+
+  sendEmail() {
+    // Code to send an email to the user
+  }
+}
+
+// Good Example
+class User {
+  constructor(name, email) {
+    this.name = name;
+    this.email = email;
+  }
+}
+
+class UserRepository {
+  saveToDatabase(user) {
+    // Code to save user to the database
+  }
+}
+
+class EmailService {
+  sendEmail(user) {
+    // Code to send an email to the user
+  }
+}
+```
+
+-**Open/Closed Principle (OCP):** This principle states that a class should be open for extension but closed for modification.
+```js
+// Bad Example
+class Rectangle {
+  constructor(width, height) {
+    this.width = width;
+    this.height = height;
+  }
+}
+
+class AreaCalculator {
+  calculateArea(rectangle) {
+    return rectangle.width * rectangle.height;
+  }
+}
+
+// Good Example
+class Shape {
+  area() {
+    // To be implemented by subclasses
+  }
+}
+
+class Rectangle extends Shape {
+  constructor(width, height) {
+    super();
+    this.width = width;
+    this.height = height;
+  }
+
+  area() {
+    return this.width * this.height;
+  }
+}
+```
+-**Liskov Substitution Principle (LSP):** This principle states that objects of a superclass should be able to replace objects of a subclass without affecting the correctness of the program.
+
+```js
+// Bad Example
+class Bird {
+  fly() {
+    // Code to make the bird fly
+  }
+}
+
+class Penguin extends Bird {
+  fly() {
+    // Penguins cannot fly
+    throw new Error("Penguins can't fly");
+  }
+}
+
+// Good Example
+class Bird {
+  fly() {
+    // Code to make the bird fly
+  }
+}
+
+class Penguin extends Bird {
+  fly() {
+    // Penguins cannot fly, but it doesn't break the contract
+    console.log("Penguins can't fly");
+  }
+}
+```
+
+-**Interface Segregation Principle (ISP):** This principle states that a class should not be forced to implement interfaces it does not use.
+
+```js
+// Bad Example
+class Worker {
+  work() {
+    // Code to perform work
+  }
+
+  eat() {
+    // Code to eat
+  }
+}
+
+// Good Example
+class Workable {
+  work() {
+    // To be implemented by classes that can work
+  }
+}
+
+class Eatable {
+  eat() {
+    // To be implemented by classes that can eat
+  }
+}
+
+class Worker implements Workable, Eatable {
+  work() {
+    // Code to perform work
+  }
+
+  eat() {
+    // Code to eat
+  }
+}
+```
+-**Dependency Inversion Principle (DIP):** This principle states that high-level modules should not depend on low-level modules. Both should depend on abstractions.
+
+```js
+// Bad Example
+class LightBulb {
+  turnOn() {
+    // Code to turn on the light bulb
+  }
+
+  turnOff() {
+    // Code to turn off the light bulb
+  }
+}
+
+class Switch {
+  constructor(bulb) {
+    this.bulb = bulb;
+  }
+
+  operate() {
+    // Code to operate the light bulb
+  }
+}
+// Good Example
+class Switchable {
+  operate() {
+    // To be implemented by classes that can be operated
+  }
+}
+
+class LightBulb implements Switchable {
+  turnOn() {
+    // Code to turn on the light bulb
+  }
+
+  turnOff() {
+    // Code to turn off the light bulb
+  }
+
+  operate() {
+    // Implementation specific to LightBulb
+  }
+}
+
+class Switch {
+  constructor(device) {
+    this.device = device;
+  }
+
+  operate() {
+    this.device.operate();
+  }
+}
+```
+
