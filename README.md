@@ -3939,6 +3939,7 @@ The SOLID principles are a set of design principles that help you create maintai
 ##
 
 **1-Single Responsibility Principle (SRP):** TA class should have only one reason to change, meaning it should have only one responsibility. This principle encourages breaking down a system into smaller, more focused components, each handling a specific aspect of functionality.
+
 **Example:** Consider a class `Report` responsible for generating and formatting reports. According to SRP, this class might violate the principle if it is also responsible for saving the report to a file or sending emails. Instead, those responsibilities should be delegated to separate classes.
 
 ```js
@@ -3980,41 +3981,33 @@ class EmailSender {
 
 **2-Open/Closed Principle (OCP):** Software entities (classes, modules, functions, etc.) should be open for extension but closed for modification. This principle encourages extending existing functionality through new code rather than altering existing code, promoting stability and minimizing the risk of introducing bugs.
 
-**Example:** Consider a class Shape with a method area(). According to OCP, you should be able to add new shapes without modifying the existing Shape class. This can be achieved by creating new classes that extend Shape and implement the area() method.
+**Example:** Consider a class `Shape` with a method area(). According to OCP, you should be able to add new shapes without modifying the existing Shape class. This can be achieved by creating new classes that extend Shape and implement the area() method.
 
 ```js
-// Bad Example
-class Rectangle {
-  constructor(width, height) {
-    this.width = width;
-    this.height = height;
-  }
+abstract class Shape {
+  abstract area(): number;
 }
 
-class AreaCalculator {
-  calculateArea(rectangle) {
-    return rectangle.width * rectangle.height;
-  }
-}
-
-// Good Example
-class Shape {
-  area() {
-    // To be implemented by subclasses
-  }
-}
-
-class Rectangle extends Shape {
-  constructor(width, height) {
+class Circle extends Shape {
+  constructor(private radius: number) {
     super();
-    this.width = width;
-    this.height = height;
   }
 
-  area() {
-    return this.width * this.height;
+  area(): number {
+    return Math.PI * this.radius ** 2;
   }
 }
+
+class Square extends Shape {
+  constructor(private sideLength: number) {
+    super();
+  }
+
+  area(): number {
+    return this.sideLength ** 2;
+  }
+}
+
 ```
 **3-Liskov Substitution Principle (LSP):** This principle states that objects of a superclass should be able to replace objects of a subclass without affecting the correctness of the program.
 
