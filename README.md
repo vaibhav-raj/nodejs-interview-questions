@@ -4083,58 +4083,32 @@ class Worker implements Workable, Eatable {
   }
 }
 ```
-**5-Dependency Inversion Principle (DIP):** High-level modules should not depend on low-level modules; both should depend on abstractions. This principle promotes the use of abstractions (interfaces or abstract classes) to decouple high-level modules from specific implementations, making the system more flexible and easily adaptable to changes.
+**5-Dependency Inversion Principle (DIP):** High-level modules should not depend on low-level modules; both should depend on abstractions. Abstractions should not depend on details; details should depend on abstractions.
+
+**Example:** Consider a scenario where a high-level module ReportGenerator depends on a low-level module DatabaseConnection to fetch data for generating reports. In a DIP-compliant design, both ReportGenerator and DatabaseConnection would depend on an abstraction, say an interface DataProvider, and the actual database connection and report generation implementations would depend on this abstraction.
 
 ```js
-// Bad Example
-class LightBulb {
-  turnOn() {
-    // Code to turn on the light bulb
-  }
+// Abstraction (DataProvider)
+interface DataProvider {
+  fetchData(): Promise<any>;
+}
 
-  turnOff() {
-    // Code to turn off the light bulb
+// Low-level module depending on abstraction
+class DatabaseConnection implements DataProvider {
+  fetchData(): Promise<any> {
+    // Code to fetch data from the database
   }
 }
 
-class Switch {
-  constructor(bulb) {
-    this.bulb = bulb;
-  }
+// High-level module depending on the same abstraction
+class ReportGenerator {
+  constructor(private dataProvider: DataProvider) {}
 
-  operate() {
-    // Code to operate the light bulb
-  }
-}
-// Good Example
-class Switchable {
-  operate() {
-    // To be implemented by classes that can be operated
+  generateReport(): void {
+    const data = this.dataProvider.fetchData();
+    // Code to generate the report using the fetched data
   }
 }
 
-class LightBulb implements Switchable {
-  turnOn() {
-    // Code to turn on the light bulb
-  }
-
-  turnOff() {
-    // Code to turn off the light bulb
-  }
-
-  operate() {
-    // Implementation specific to LightBulb
-  }
-}
-
-class Switch {
-  constructor(device) {
-    this.device = device;
-  }
-
-  operate() {
-    this.device.operate();
-  }
-}
 ```
 
