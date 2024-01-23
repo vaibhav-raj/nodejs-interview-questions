@@ -3938,7 +3938,7 @@ The SOLID principles are a set of design principles that help you create maintai
   
 ##
 
-**1-Single Responsibility Principle (SRP):** This principle states that a class should have only one reason to change, meaning it should have only one responsibility.
+**1-Single Responsibility Principle (SRP):** TA class should have only one reason to change, meaning it should have only one responsibility. This principle encourages breaking down a system into smaller, more focused components, each handling a specific aspect of functionality.
 
 ```js
 // Bad Example
@@ -3978,7 +3978,8 @@ class EmailService {
 }
 ```
 
-**2-Open/Closed Principle (OCP):** This principle states that a class should be open for extension but closed for modification.
+**2-Open/Closed Principle (OCP):** Software entities (classes, modules, functions, etc.) should be open for extension but closed for modification. This principle encourages extending existing functionality through new code rather than altering existing code, promoting stability and minimizing the risk of introducing bugs.
+
 ```js
 // Bad Example
 class Rectangle {
@@ -4045,7 +4046,7 @@ class Penguin extends Bird {
 }
 ```
 
-**4-Interface Segregation Principle (ISP):** This principle states that a class should not be forced to implement interfaces it does not use.
+**4-Interface Segregation Principle (ISP):** TA class should not be forced to implement interfaces it does not use. This principle encourages the creation of specific, client-focused interfaces rather than large, general-purpose interfaces, preventing classes from being burdened with unnecessary methods.
 
 ```js
 // Bad Example
@@ -4082,7 +4083,7 @@ class Worker implements Workable, Eatable {
   }
 }
 ```
-**5-Dependency Inversion Principle (DIP):** This principle states that high-level modules should not depend on low-level modules. Both should depend on abstractions.
+**5-Dependency Inversion Principle (DIP):** High-level modules should not depend on low-level modules; both should depend on abstractions. This principle promotes the use of abstractions (interfaces or abstract classes) to decouple high-level modules from specific implementations, making the system more flexible and easily adaptable to changes.
 
 ```js
 // Bad Example
