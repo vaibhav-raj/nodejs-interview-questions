@@ -3923,6 +3923,8 @@ app.listen(3000);
 
 The SOLID principles are a set of design principles that help you create maintainable and scalable software. Let's go through each SOLID principle with examples in a Node.js context
 
+## Advantage of the SOLID Principles -
+
 - **Maintainability:** SOLID principles enhance code maintainability by promoting modular and organized structures.
 - **Flexibility:** Adhering to SOLID principles results in code that is open for extension but closed for modification, promoting flexibility.
 - **Scalability:** The modular and loosely coupled design of SOLID principles facilitates easier scaling of applications.
