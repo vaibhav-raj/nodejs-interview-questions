@@ -102,6 +102,14 @@
 | 88. |[What do you understand by Reactor Pattern in Node.js?](#q-what-do-you-understand-by-reactor-pattern-in-nodejs)|
 | 89. |[What are globals in Node.js?](#q-what-are-globals-in-nodejs)|
 
+| Sl.No|  MongoDB Questions       |
+|------|--------------------------------|
+| 01.  |[Comparison of SQL vs NoSQL](#q-comparison-of-sql-vs-nosql)|
+| 02.  |[Acid Properties](#q-acid-properties)|
+| 03.  |[Sharding and Replica](#q-sharding-and-Replica)|
+
+
+
 | Sl.No|  System Design Questions       |
 |------|--------------------------------|
 | 01.  |[SOLID Principles?](#q-solid-principles)|
@@ -4108,4 +4116,54 @@ class ReportGenerator {
 }
 
 ```
+
+## Q. ***Comparison of SQL vs NoSQL***
+* SQL databases are relational, and NoSQL databases are non-relational.
+* SQL databases use structured query language (SQL) and have a predefined schema. NoSQL databases have dynamic schemas for unstructured data.
+* SQL databases are vertically scalable, while NoSQL databases are horizontally scalable.
+* SQL databases are table-based, while NoSQL databases are document, key-value, graph, or wide-column stores.
+* SQL databases are better for multi-row transactions, while NoSQL is better for unstructured data like documents or JSON.
+  
+  Examples:
+  - SQL : MySQL, PostgreSQL, Oracle, SQL Server, Microsoft SQL Server
+  - NoSQL : MongoDB, Cassandra, Couchbase, Amazon DynamoDB, Redis
+    
+Use Cases:
+
+* SQL
+   * Well-suited for applications with complex queries and transactions.
+   * Suitable for scenarios where data integrity and consistency are critical.
+   * Commonly used in traditional business applications, financial systems, and systems with well-defined and stable data structures.
+
+* NoSQL
+  * Ideal for scenarios with rapidly changing or unpredictable data requirements.
+  * Well-suited for applications that require scalability and flexibility in handling large volumes of unstructured or semi-structured data.
+  * Commonly used in modern web applications, content management systems, real-time big data analytics, and applications dealing with diverse data types.
+
+## Q. ***Acid Properties***
+* Atomicity   -	All queries in a transaction must succeed. If one fails, all should rollback.
+* Consistency - The database must be consistent before and after the transaction.
+* Isolation  -	Multiple Transactions occur independently without interference.
+* Durability -  The changes of a successful transaction occurs even if the system failure occurs
+
+## Q. ***Sharding and Replica***
+Sharding and replication are techniques used in distributed database systems to improve performance, scalability, and fault tolerance.
+
+1. Sharding
+	* Definition : Sharding, also known as horizontal partitioning, involves dividing a large database into smaller, more manageable pieces called shards.
+ 	* Purpose:  The main purpose of sharding is to distribute the data across multiple servers or nodes. Each shard contains a subset of the data, and each shard operates 		  independently of the others.
+  	* Benefits:
+   		* Scalability: Sharding allows the database to scale horizontally by adding more shards and distributing the load across multiple servers.
+   		* Performance: Queries can be executed in parallel on different shards, improving overall query performance.
+    		* Isolation: Failures or issues in one shard do not necessarily impact the entire database.
+2. Replication
+	* Definition: Replication involves creating and maintaining copies of the same data on multiple database servers.
+ 	* Purpose: The primary goal of replication is to enhance data availability, fault tolerance, and sometimes read performance.
+        * Types:
+        	* Master-Slave Replication: One server (master) is responsible for updates, and the changes are replicated to one or more slave servers.
+     		* Multi-Master Replication: Multiple servers can accept both read and write operations, and changes are propagated to all nodes in the replication group.
+        * Benefits:
+        	* Fault Tolerance: If one server fails, the others can continue to serve data.
+         	* Read Scalability: Multiple nodes can handle read requests, distributing the read load.
+          	* Load Balancing: Traffic can be distributed among the replicas, balancing the load on the database servers.
 
