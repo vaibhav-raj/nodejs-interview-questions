@@ -44,7 +44,7 @@
 | 30. |[What is typically the first argument passed to a Node.js callback handler?](#q-what-is-typically-the-first-argument-passed-to-a-nodejs-callback-handler)|
 | 31. |[How Node.js read the content of a file?](#q-how-nodejs-read-the-content-of-a-file)|
 | 32. | [How to import a module in Node.js?](#q-how-to-import-a-module-in-nodejs)|
-| 33. |[What is difference between put and patch?](#q-what-is-difference-between-put-and-patch)|
+| 33. |[](#q)|
 | 34. |[List types of Http requests supported by Node.js.](#q-list-types-of-http-requests-supported-by-nodejs)
 | 35. |[Why to use Express.js?](#q-why-to-use-expressjs)|
 | 36. | [What are the main disadvantages of Node.js?](#q-what-are-the-main-disadvantages-of-nodejs)|
@@ -106,7 +106,14 @@
 |------|--------------------------------|
 | 01.  |[Comparison of SQL vs NoSQL](#q-comparison-of-sql-vs-nosql)|
 | 02.  |[Acid Properties](#q-acid-properties)|
-| 03.  |[Sharding and Replica](#q-sharding-and-Replica)|
+| 03.  |[Sharding and Replica](#q-sharding-vs-replica)|
+| 04.  |[Put and Patch](#q-put-vs-patch)|
+| 05.  |[What is the difference between find() and findOne() in MongoDB?](#q-find-vs-findone)|
+| 06.  |[What is the difference between updateOne() and findByIdAndUpdate() in MongoDB?](#q-updateOne-vs-findByIdAndUpdate)|
+| 05.  |What is Embedding documents & Referencing documents in MongoDB.](#q-embedding-vs-referencing-documents-in-mongodb)|
+
+
+
 
 
 
@@ -1600,29 +1607,6 @@ V8 is Google’s open source high-performance JavaScript and WebAssembly engine,
 ## Q. ***Why is LIBUV needed in Node JS?***
 
 LIBUV is a library written in C and it\'s focus is on asynchronous I/O. Node.js use this library to interact with OS, system files and networking and also two core features of Node.js called event loop and thread pool are available in this runtime thanks to this library.
-
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
-
-## Q. ***What is difference between put and patch?***
-
-PUT and PATCH are HTTP verbs and they both relate to updating a resource. The main difference between PUT and PATCH requests are in the way the server processes the enclosed entity to modify the resource identified by the Request-URI.
-
-In a PUT request, the enclosed entity is considered to be a modified version of the resource stored on the origin server, and the client is requesting that the stored version be replaced.
-
-With PATCH, however, the enclosed entity contains a set of instructions describing how a resource currently residing on the origin server should be modified to produce a new version.
-
-Also, another difference is that when you want to update a resource with PUT request, you have to send the full payload as the request whereas with PATCH, you only send the parameters which you want to update.
-
-The most commonly used HTTP verbs POST, GET, PUT, DELETE are similar to CRUD (Create, Read, Update and Delete) operations in database. We specify these HTTP verbs in the capital case. So, the below is the comparison between them.
-
-* `POST` - create
-* `GET`  - read  
-* `PUT`  - update
-* `DELETE` - delete
-
-**PATCH**: Submits a partial modification to a resource. If you only need to update one field for the resource, you may want to use the PATCH method.
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -4146,7 +4130,7 @@ Use Cases:
 * Isolation  -	Multiple Transactions occur independently without interference.
 * Durability -  The changes of a successful transaction occurs even if the system failure occurs
 
-## Q. ***Sharding and Replica***
+## Q. ***Sharding vs Replica***
 Sharding and replication are techniques used in distributed database systems to improve performance, scalability, and fault tolerance.
 
 1. Sharding
@@ -4166,4 +4150,94 @@ Sharding and replication are techniques used in distributed database systems to 
         	* Fault Tolerance: If one server fails, the others can continue to serve data.
          	* Read Scalability: Multiple nodes can handle read requests, distributing the read load.
           	* Load Balancing: Traffic can be distributed among the replicas, balancing the load on the database servers.
+
+## Q. ***Put vs Patch***
+
+| Feature                 | PUT                                       | PATCH                                             |
+|-------------------------|-------------------------------------------|---------------------------------------------------|
+| **Purpose**             | Update or create a resource at a specific URI. | Apply partial modifications to a resource.          |
+| **Idempotent**          | Yes (making the same request multiple times has the same effect as making it once). | Yes (depending on server implementation).         |
+| **Data Handling**       | Send the entire updated representation of the resource. | Send a set of instructions (patch) describing how the resource should be modified. |
+| **Example Request**     | ```http PUT /users/123 { "name": "John Doe", "age": 30 }``` | ```http PATCH /users/123 [{"op": "replace", "path": "/name", "value": "Jane Doe"}]``` |
+
+## Q. ***find vs findone***
+
+### 1. find()
+
+The `find` method in MongoDB is used to retrieve multiple documents from a collection based on specified query criteria. The result of a `find` operation is a cursor, allowing you to iterate over the matching documents.
+
+### findOne()
+
+The `findOne` method in MongoDB is used to retrieve a single document from a collection based on specified query criteria.
+
+## Q. ***updateOne vs findByIdAndUpdate***
+
+### `updateOne` Method
+
+The `updateOne` method in MongoDB is a general-purpose update operation that allows you to update a single document in a collection based on a specified filter. It is not specifically tied to the document's `_id` field, and you can update a document based on any criteria.
+
+### `findByIdAndUpdate` Method
+
+The `findByIdAndUpdate` method in MongoDB is used to update a document based on its unique `_id` field. This method is particularly useful when you want to target a specific document using its identifier.
+
+* Key Differences:
+	* updateOne is a general-purpose method for updating documents based on various criteria.
+ 	* findByIdAndUpdate is specifically designed for updating documents based on their unique identifier (_id field).
+  * 
+## Q. ***Embedding vs Referencing documents in MongoDB***
+In MongoDB, embedding documents and referencing documents are two strategies for modeling relationships between data in a database.
+
+### Embedding Documents:
+* Definition: Embedding involves storing one document inside another as a field or array of fields.
+  
+```javascript
+{
+  "_id": 1,
+  "title": "Book",
+  "author": {
+    "name": "AuthorName",
+    "age": 35
+  }
+}
+```
+* Advantages:
+	* Simplifies queries.
+ 	* Improved read performance for frequently accessed data.
+  	* Atomic updates for both main and embedded documents.   
+* Disadvantages:
+	* Data redundancy may occur.
+ 	* Limited flexibility for querying nested structures.
+  	* Document size limit (16MB).
+### Referencing Documents:
+* Definition: Referencing involves storing a reference or link to another document.
+
+```javascript
+{
+  "_id": 1,
+  "title": "Book",
+  "author_id": 101
+}
+```
+* Advantages:
+	* Reduces data redundancy as related data is stored separately.
+ 	* Enables flexible querying using aggregation pipelines.
+  	* Consistent updates to referenced documents.
+*Disadvantages:
+	*Increased read latency due to multiple queries or joins.
+	*Potential for incomplete transactions across documents.
+	*More complex data retrieval, especially for related data.
+
+#### Choosing Between Embedding and Referencing:
+
+* Decision Factors:
+	* Use Case Specific: Choose based on application requirements.
+	* Data Size and Structure: Embed for simplicity or reference for scalability.
+	* Query Requirements: Embed if data is queried together; reference if queried independently.
+	* Performance Considerations: Analyze read/write patterns, scalability, and latency needs.
+
+
+
+
+
+
 
