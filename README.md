@@ -4184,7 +4184,7 @@ The `findByIdAndUpdate` method in MongoDB is used to update a document based on 
 	* updateOne is a general-purpose method for updating documents based on various criteria.
  	* findByIdAndUpdate is specifically designed for updating documents based on their unique identifier (_id field).
   * 
-## Q. ***Embedding vs Referencing documents in MongoDB***
+## Q. ***Embedding vs Referencing document***
 In MongoDB, embedding documents and referencing documents are two strategies for modeling relationships between data in a database.
 
 ### Embedding Documents:
