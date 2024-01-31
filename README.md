@@ -4222,10 +4222,10 @@ In MongoDB, embedding documents and referencing documents are two strategies for
 	* Reduces data redundancy as related data is stored separately.
  	* Enables flexible querying using aggregation pipelines.
   	* Consistent updates to referenced documents.
-*Disadvantages:
-	*Increased read latency due to multiple queries or joins.
-	*Potential for incomplete transactions across documents.
-	*More complex data retrieval, especially for related data.
+* Disadvantages:
+	* Increased read latency due to multiple queries or joins.
+	* Potential for incomplete transactions across documents.
+	* More complex data retrieval, especially for related data.
 
 #### Choosing Between Embedding and Referencing:
 
