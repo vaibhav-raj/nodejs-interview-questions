@@ -109,8 +109,8 @@
 | 03.  |[Sharding and Replica](#q-sharding-vs-replica)|
 | 04.  |[Put and Patch](#q-put-vs-patch)|
 | 05.  |[What is the difference between find() and findOne() in MongoDB?](#q-find-vs-findone)|
-| 06.  |[What is the difference between updateOne() and findByIdAndUpdate() in MongoDB?](#q-updateOne-vs-findByIdAndUpdate)|
-| 05.  |What is Embedding documents & Referencing documents in MongoDB.](#q-embedding-vs-referencing-documents-in-mongodb)|
+| 06.  |[What is the difference between updateOne() and findByIdAndUpdate() in MongoDB?](#q-updateone-vs-findbyidandupdate)|
+| 07.  |[What is Embedding documents & Referencing documents in MongoDB.](#q-embedding-vs-referencing-document)|
 
 
 
