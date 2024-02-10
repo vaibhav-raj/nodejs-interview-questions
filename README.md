@@ -395,7 +395,7 @@ Node JS Platform does not follow Request/Response Multi-Threaded Stateless Model
 * It allows you to specify the dependencies your project needs to run, as well as any development dependencies required for tasks like testing, building, or compiling code.
 * This file is usually committed to version control systems like Git.
 * 
-#### package.lock.json:
+#### package-lock.json:
 
 * package-lock.json is automatically generated for any operations where npm modifies either the node_modules directory or the package.json.
 * It serves as a lockfile which ensures that the same dependencies are installed across different machines or environments. This ensures reproducible builds.
