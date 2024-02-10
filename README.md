@@ -386,7 +386,8 @@ Node JS Platform does not follow Request/Response Multi-Threaded Stateless Model
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q. ***Difference between package.json and package-lock.json***
+## Q. ***Difference between package json and package lock json***
+difference_between_package_json_and_package_lock_json
 #### package.json:
 * package.json is a metadata file for a Node.js project. It typically resides in the root directory of your project.
 * It contains various metadata relevant to the project such as name, version, description, dependencies, scripts, and more.
