@@ -21,7 +21,7 @@
 | 07. |[What is an error-first callback?](#q-what-is-an-error-first-callback)|
 | 08. |[What is callback hell in Node.js?](#q-what-is-callback-hell-in-nodejs)|
 | 09. |[What are Promises in Node.js?](#q-what-are-promises-in-nodejs)|
-| 10. |[Difference between package.json and package-lock.json](#difference_between_package_json_and_package_lock_json)|
+| 10. |[Difference between package.json and package-lock.json](#difference_between_packagejson_and_packagelockjson)|
 | 11. |[When should you npm and when yarn?](#q-when-should-you-npm-and-when-yarn)|
 | 12. |[What is a stub?](#q-what-is-a-stub)|
 | 13. |[What is a test pyramid? How can you implement it when talking about HTTP APIs?](#q-what-is-a-test-pyramid-how-can-you-implement-it-when-talking-about-http-apis)|
@@ -386,7 +386,7 @@ Node JS Platform does not follow Request/Response Multi-Threaded Stateless Model
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q. ***Difference between package json and package lock json***
+## Q. ***Difference between package.json and package.lock.json***
 difference_between_package_json_and_package_lock_json
 #### package.json:
 * package.json is a metadata file for a Node.js project. It typically resides in the root directory of your project.
@@ -395,7 +395,7 @@ difference_between_package_json_and_package_lock_json
 * It allows you to specify the dependencies your project needs to run, as well as any development dependencies required for tasks like testing, building, or compiling code.
 * This file is usually committed to version control systems like Git.
 * 
-#### package-lock.json:
+#### package.lock.json:
 
 * package-lock.json is automatically generated for any operations where npm modifies either the node_modules directory or the package.json.
 * It serves as a lockfile which ensures that the same dependencies are installed across different machines or environments. This ensures reproducible builds.
