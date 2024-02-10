@@ -112,9 +112,9 @@
 | 06.  |[What is the difference between updateOne() and findByIdAndUpdate() in MongoDB?](#q-updateone-vs-findbyidandupdate)|
 | 07.  |[What is Embedding documents & Referencing documents in MongoDB?](#q-embedding-vs-referencing-document)|
 
-
-
-
+| Sl.No|  Express JS Questions       |
+|------|--------------------------------|
+| 01.  |[What is Express, why do we use it, and what are its benefits?](#q-what-is-expressjs)|
 
 
 | Sl.No|  System Design Questions       |
@@ -4235,9 +4235,24 @@ In MongoDB, embedding documents and referencing documents are two strategies for
 	* Query Requirements: Embed if data is queried together; reference if queried independently.
 	* Performance Considerations: Analyze read/write patterns, scalability, and latency needs.
 
+## Q. ***What is Expressjs***
+* Definition: Express is a web application framework for Node.js, which is used for building web applications and APIs. It provides a robust set of features for building web servers and handling HTTP requests and responses
+It's a layer built on the top of the Node js that helps manage servers and routes.
 
+#### Why Choose Express.js?
+* Simplicity: Offers a minimalist and intuitive framework.
+* Flexibility: Allows developers to organize code without strict conventions.
+* Robustness: Provides features and middleware for handling common tasks effectively.
+* Performance: Leverages Node.js's asynchronous architecture for efficient handling of concurrent connections.
+* Active Community: Benefits from a large and supportive community with abundant resources.
+* Scalability: Well-suited for building scalable applications.
 
-
-
-
-
+#### Features of Express JS
+* Routing: Organizes handling of HTTP requests with defined routes.
+* Middleware: Integrates various functionalities within the request-response cycle.
+* Templating: Supports templating engines for dynamic web page content generation.
+* Error Handling: Manages errors effectively, aiding in application debugging.
+* Extensibility: Allows easy integration of third-party modules and extensions.
+* Performance: Leverages Node.js for high performance and scalability.
+* Flexibility: Provides freedom in application structure without strict conventions.
+* Community Support: Benefits from a large and active community for resources and solutions.
