@@ -21,7 +21,7 @@
 | 07. |[What is an error-first callback?](#q-what-is-an-error-first-callback)|
 | 08. |[What is callback hell in Node.js?](#q-what-is-callback-hell-in-nodejs)|
 | 09. |[What are Promises in Node.js?](#q-what-are-promises-in-nodejs)|
-| 10. |[Difference between package.json and package-lock.json](#difference-between-packagejson-and-packagelockjson)|
+| 10. |[Difference between package.json and package-lock.json](#q-difference-between-packagejson-and-packagelockjson)|
 | 11. |[When should you npm and when yarn?](#q-when-should-you-npm-and-when-yarn)|
 | 12. |[What is a stub?](#q-what-is-a-stub)|
 | 13. |[What is a test pyramid? How can you implement it when talking about HTTP APIs?](#q-what-is-a-test-pyramid-how-can-you-implement-it-when-talking-about-http-apis)|
@@ -387,6 +387,7 @@ Node JS Platform does not follow Request/Response Multi-Threaded Stateless Model
 </div>
 
 ## Q. ***Difference between package.json and package-lock.json***
+
 
 #### package.json:
 * package.json is a metadata file for a Node.js project. It typically resides in the root directory of your project.
