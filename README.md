@@ -21,7 +21,8 @@
 | 07. |[What is an error-first callback?](#q-what-is-an-error-first-callback)|
 | 08. |[What is callback hell in Node.js?](#q-what-is-callback-hell-in-nodejs)|
 | 09. |[What are Promises in Node.js?](#q-what-are-promises-in-nodejs)|
-| 10. |[What tools can be used to assure consistent style?](#q-what-tools-can-be-used-to-assure-consistent-style)|
+
+| 10. |[Difference between package.json and package-lock.json](#difference_between_package_json_and_package_lock_json)|
 | 11. |[When should you npm and when yarn?](#q-when-should-you-npm-and-when-yarn)|
 | 12. |[What is a stub?](#q-what-is-a-stub)|
 | 13. |[What is a test pyramid? How can you implement it when talking about HTTP APIs?](#q-what-is-a-test-pyramid-how-can-you-implement-it-when-talking-about-http-apis)|
@@ -40,7 +41,7 @@
 | 26. |[Name the types of API functions in Node.js.](#q-name-the-types-of-api-functions-in-nodejs)
 | 27. |[How does Node.js handle child threads?](#q-how-does-nodejs-handle-child-threads)|
 | 28. |[What is the preferred method of resolving unhandled exceptions in Node.js?](#q-what-is-the-preferred-method-of-resolving-unhandled-exceptions-in-nodejs)|
-| 29. ||
+| 29. |[What tools can be used to assure consistent style?](#q-what-tools-can-be-used-to-assure-consistent-style)|
 | 30. |[What is typically the first argument passed to a Node.js callback handler?](#q-what-is-typically-the-first-argument-passed-to-a-nodejs-callback-handler)|
 | 31. |[How Node.js read the content of a file?](#q-how-nodejs-read-the-content-of-a-file)|
 | 32. | [How to import a module in Node.js?](#q-how-to-import-a-module-in-nodejs)|
@@ -385,6 +386,22 @@ Node JS Platform does not follow Request/Response Multi-Threaded Stateless Model
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
+
+## Q. ***Difference between package.json and package-lock.json***
+#### package.json:
+* package.json is a metadata file for a Node.js project. It typically resides in the root directory of your project.
+* It contains various metadata relevant to the project such as name, version, description, dependencies, scripts, and more.
+* Developers often manually modify this file to add or update dependencies, define scripts for various tasks, and manage project settings.
+* It allows you to specify the dependencies your project needs to run, as well as any development dependencies required for tasks like testing, building, or compiling code.
+* This file is usually committed to version control systems like Git.
+* 
+#### package-lock.json:
+
+* package-lock.json is automatically generated for any operations where npm modifies either the node_modules directory or the package.json.
+* It serves as a lockfile which ensures that the same dependencies are installed across different machines or environments. This ensures reproducible builds.
+* It includes specific versions of all installed dependencies, including sub-dependencies, along with their download URLs and checksums.
+* The presence of package-lock.json helps in providing deterministic installs, preventing possible discrepancies between environments.
+* This file should be committed to version control along with package.json to ensure consistent dependency installations across the development team.
 
 ## Q. ***Explain the concept of URL module in Node.js?***
 
