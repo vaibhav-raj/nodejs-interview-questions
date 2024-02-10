@@ -21,7 +21,6 @@
 | 07. |[What is an error-first callback?](#q-what-is-an-error-first-callback)|
 | 08. |[What is callback hell in Node.js?](#q-what-is-callback-hell-in-nodejs)|
 | 09. |[What are Promises in Node.js?](#q-what-are-promises-in-nodejs)|
-
 | 10. |[Difference between package.json and package-lock.json](#difference_between_package_json_and_package_lock_json)|
 | 11. |[When should you npm and when yarn?](#q-when-should-you-npm-and-when-yarn)|
 | 12. |[What is a stub?](#q-what-is-a-stub)|
