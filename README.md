@@ -115,7 +115,7 @@
 | Sl.No|  Express JS Questions       |
 |------|--------------------------------|
 | 01.  |[What is Express, why do we use it, and what are its benefits?](#q-what-is-expressjs)|
-| 02.  |[What is middleware?](#q-what-is-middleware)|
+| 02.  |[What is Express middleware?](#q-what-is-express-middleware)|
 
 
 | Sl.No|  System Design Questions       |
@@ -4254,7 +4254,7 @@ It's a layer built on the top of the Node js that helps manage servers and route
 * Flexibility: Provides freedom in application structure without strict conventions.
 * Community Support: Benefits from a large and active community for resources and solutions.
 
-## Q. ***What is middleware?***
+## Q. ***What is Express middleware?***
 
 Middleware is the function that works between the request and the response cycle. Middleware gets executed after the server receives the request and before the controller sends the response.
 
