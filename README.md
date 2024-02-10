@@ -40,7 +40,7 @@
 | 26. |[Name the types of API functions in Node.js.](#q-name-the-types-of-api-functions-in-nodejs)
 | 27. |[How does Node.js handle child threads?](#q-how-does-nodejs-handle-child-threads)|
 | 28. |[What is the preferred method of resolving unhandled exceptions in Node.js?](#q-what-is-the-preferred-method-of-resolving-unhandled-exceptions-in-nodejs)|
-| 29. |[What is middleware?](#q-what-is-middleware)|
+| 29. ||
 | 30. |[What is typically the first argument passed to a Node.js callback handler?](#q-what-is-typically-the-first-argument-passed-to-a-nodejs-callback-handler)|
 | 31. |[How Node.js read the content of a file?](#q-how-nodejs-read-the-content-of-a-file)|
 | 32. | [How to import a module in Node.js?](#q-how-to-import-a-module-in-nodejs)|
@@ -115,6 +115,7 @@
 | Sl.No|  Express JS Questions       |
 |------|--------------------------------|
 | 01.  |[What is Express, why do we use it, and what are its benefits?](#q-what-is-expressjs)|
+| 02.  |[What is middleware?](#q-what-is-middleware)|
 
 
 | Sl.No|  System Design Questions       |
@@ -1256,10 +1257,6 @@ console.log(decrypted);
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
-
-## Q. ***What is middleware?***
-
-Middleware is the function that works between the request and the response cycle. Middleware gets executed after the server receives the request and before the controller sends the response.
      
 ## Q. ***What is the use of DNS module in Node.js?***
 
@@ -4256,3 +4253,40 @@ It's a layer built on the top of the Node js that helps manage servers and route
 * Performance: Leverages Node.js for high performance and scalability.
 * Flexibility: Provides freedom in application structure without strict conventions.
 * Community Support: Benefits from a large and active community for resources and solutions.
+
+## Q. ***What is middleware?***
+
+Middleware is the function that works between the request and the response cycle. Middleware gets executed after the server receives the request and before the controller sends the response.
+
+#### Types of Express.js middleware
+
+1. **Application-level middleware**:
+   - Bound to the `app` object.
+   - Executed for every request received by the application.
+   - Examples include `app.use()` and `app.all()`.
+
+2. **Router-level middleware**:
+   - Bound to an instance of `express.Router()`.
+   - Executed for every request within the router scope.
+   - Used to perform operations specific to a particular route or group of routes.
+   - Examples include `router.use()`.
+
+3. **Error-handling middleware**:
+   - Defined using `app.use()` with four parameters `(err, req, res, next)`.
+   - Used to handle errors that occur during the handling of requests.
+   - Typically placed at the end of the middleware chain.
+   - Examples include `(err, req, res, next) => {}`.
+
+4. **Built-in middleware**:
+   - Provided by Express to handle common tasks.
+   - Examples include `express.json()` for parsing JSON request bodies, `express.urlencoded()` for parsing URL-encoded request bodies, and `express.static()` for serving static files.
+
+5. **Third-party middleware**:
+   - Provided by third-party packages to extend Express functionality.
+   - Used to enable features like parsing request bodies, enabling CORS, setting security headers, etc.
+   - Examples include `body-parser`, `cors`, and `helmet`.
+
+6. **Custom middleware**:
+   - Created by developers to handle specific tasks not covered by built-in or third-party middleware.
+   - Can be used at the application level or router level.
+   - Examples include middleware for authentication, logging, rate limiting, etc.
